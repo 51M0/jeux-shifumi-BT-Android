@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="57dp">
+
+        <TextView
+            android:text="name:"
+            android:layout_width="206dp"
+            android:layout_height="66dp"
+            android:id="@+id/textView" />
+
+        <TextView
+            android:layout_width="170dp"
+            android:layout_height="match_parent"
+            android:id="@+id/DeviceName"
+            android:textSize="15sp"
+            android:layout_weight="34.75" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="42dp">
+
+        <TextView
+            android:text="adresse"
+            android:layout_width="177dp"
+            android:id="@+id/textView2"
+            android:layout_height="34dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/DeviceAddress"
+            android:textSize="15sp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+</LinearLayout>
