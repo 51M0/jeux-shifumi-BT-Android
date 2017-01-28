@@ -1,6 +1,7 @@
 package com.example.a51m0.applibt;
 
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 
 /**
@@ -20,6 +21,8 @@ GameOnline gameOnline;
             @Override
             public void run() {
                 gameOnline.waiting.setImageResource(R.drawable.hourglass);;
+                gameOnline.textscore.setText("Round"+gameOnline.Round++);
+
             }}
         );
         while (!gameOnline.J1 || !gameOnline.J2){
@@ -34,6 +37,9 @@ GameOnline gameOnline;
             @Override
             public void run() {
                 gameOnline.setWaiting(gameOnline.P2);
+                gameOnline.papier.setVisibility(View.VISIBLE);
+                gameOnline.pierre.setVisibility(View.VISIBLE);
+                gameOnline.ciseaux.setVisibility(View.VISIBLE);
             }}
         );
 

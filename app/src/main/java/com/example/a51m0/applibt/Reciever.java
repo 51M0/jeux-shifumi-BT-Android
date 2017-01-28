@@ -22,7 +22,7 @@ public class Reciever extends BroadcastReceiver   {
     @Override
     public void onReceive(Context context, Intent intent) {
         if(!g.J2){
-
+            g.textscore.setText("your turn");
             Log.d("on receiev", "recu");
             String text=intent.getStringExtra("the message");
             //message.append(text +"\n");

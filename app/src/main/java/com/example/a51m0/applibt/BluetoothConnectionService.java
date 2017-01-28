@@ -320,6 +320,19 @@ public class BluetoothConnectionService {
         //perform the write
         mConnectedThread.write(out);
     }
+    public synchronized void cancel() {
+        Log.d(TAG, "cancel");
+
+        // Cancel any thread attempting to make a connection
+        if (mConnectThread != null) {
+            mConnectThread.cancel();
+            mConnectThread = null;
+        }
+        if (mInsecureAcceptThread != null) {
+            mInsecureAcceptThread.interrupt();
+            mInsecureAcceptThread=null;
+        }
+    }
 
 }
 

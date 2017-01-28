@@ -24,21 +24,28 @@ public class Ecouteur_jeux_online  implements View.OnClickListener {
         if(!g.J1){
             Log.d("réussi click", "onClick: ");
             int aEnvoyer=1000;
-
+            g.textscore.setText("waiting opponent");
             switch (v.getId()) {
                 case R.id.papier:
                     g.P1 = 1;
                     aEnvoyer=1;
+                    g.pierre.setVisibility(View.INVISIBLE);
+                    g.ciseaux.setVisibility(View.INVISIBLE);
                     break;
                 case R.id.pierre:
                     g.P1 = 2;
                     aEnvoyer=2;
+                    g.papier.setVisibility(View.INVISIBLE);
+                    g.ciseaux.setVisibility(View.INVISIBLE);
                     break;
                 case R.id.ciseaux:
                     g.P1 = 3;
+                    g.pierre.setVisibility(View.INVISIBLE);
+                    g.papier.setVisibility(View.INVISIBLE);
                     aEnvoyer=3;
                     break;
             }
+
             byte[] bytes =Integer.toString(aEnvoyer).getBytes(Charset.defaultCharset());
             g.mBluetoothConnection.write(bytes);
             g.J1=true;

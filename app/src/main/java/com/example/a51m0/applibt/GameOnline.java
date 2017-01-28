@@ -25,7 +25,7 @@ import java.util.UUID;
 
 
 public class GameOnline extends Activity {
-    private ImageView pierre,papier,ciseaux;
+    public ImageView pierre,papier,ciseaux;
     public ImageView waiting;
     public TextView score,scoreoppenet,textscore;
     public boolean J1=false,J2=false;
@@ -36,12 +36,16 @@ public class GameOnline extends Activity {
     BluetoothConnectionService mBluetoothConnection;
     Traitement traitement;
     private static final String TAG="on game";
-    public int P1,P2;
+    public int P1,P2,Round;
 
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (mBluetoothConnection!=null){
+            mBluetoothConnection.cancel();
+        }
+        Round=0;
         setContentView(R.layout.game);
         Intent i = getIntent();
         mBTDevice = i.getExtras().getParcelable("btdevices");
